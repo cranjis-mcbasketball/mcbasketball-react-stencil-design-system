@@ -1,0 +1,42 @@
+{
+  "name": "mcbasketball-core",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/core/core.js",
+  "files": [
+    "dist/",
+    "css/",
+    "loader/"
+  ],
+  "scripts": {
+    "start": "npm run build.css && stencil build --dev --watch --serve",
+    "build.all": "npm run clean && npm run build.css && npm run build.stencil && npm run build.stencil -- --docs",
+    "build.css": "npm run css.sass && npm run css.minify",
+    "build.stencil": "stencil build --prod",
+    "clean": "node scripts/clean.js",
+    "css.minify": "cleancss -O2 -o ./css/mcbasketball.bundle.css ./css/mcbasketball.bundle.css",
+    "css.sass": "sass src/css:./css",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/sass": "^1.4.1",
+    "@types/jest": "24.0.25",
+    "@types/puppeteer": "1.19.1",
+    "clean-css-cli": "^5.2.2",
+    "fs-extra": "^9.1.0",
+    "jest": "24.8.0",
+    "jest-cli": "^24.8.0",
+    "puppeteer": "1.19.0",
+    "sass": "^1.32.11"
+  },
+  "license": "MIT"
+}

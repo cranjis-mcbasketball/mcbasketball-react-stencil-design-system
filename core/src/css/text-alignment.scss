@@ -1,0 +1,54 @@
+@import "../theme/mcbasketball.globals";
+@import "../theme/mcbasketball.mixins";
+
+// Text Alignment
+// --------------------------------------------------
+// Creates text alignment attributes based on screen size
+
+@each $breakpoint in map-keys($screen-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $screen-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $screen-breakpoints) {
+    // Provide `[text-{bp}]` attributes for aligning the text based
+    // on the breakpoint
+    .mcbasketball-text#{$infix}-center,
+    [text#{$infix}-center] {
+      text-align: center !important;
+    }
+
+    .mcbasketball-text#{$infix}-justify,
+    [text#{$infix}-justify] {
+      text-align: justify !important;
+    }
+
+    .mcbasketball-text#{$infix}-start,
+    [text#{$infix}-start] {
+      text-align: start !important;
+    }
+
+    .mcbasketball-text#{$infix}-end,
+    [text#{$infix}-end] {
+      text-align: end !important;
+    }
+
+    .mcbasketball-text#{$infix}-left,
+    [text#{$infix}-left] {
+      text-align: left !important;
+    }
+
+    .mcbasketball-text#{$infix}-right,
+    [text#{$infix}-right] {
+      text-align: right !important;
+    }
+
+    .mcbasketball-text#{$infix}-nowrap,
+    [text#{$infix}-nowrap] {
+      white-space: nowrap !important;
+    }
+
+    .mcbasketball-text#{$infix}-wrap,
+    [text#{$infix}-wrap] {
+      white-space: normal !important;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import "../theme/mcbasketball.globals";
+
+html {
+  --mcbasketball-default-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+  --mcbasketball-font-family: var(--mcbasketball-default-font);
+}
+
+body {
+  background: var(--mcbasketball-background-color);
+}
+
+body.backdrop-no-scroll {
+  overflow: hidden;
+}
+
+// Ionic Colors
+// --------------------------------------------------
+// Generates the color classes and variables based on the
+// colors map
+
+@mixin generate-color($color-name) {
+  $value: map-get($colors, $color-name);
+
+  $base: map-get($value, base);
+  $contrast: map-get($value, contrast);
+  $shade: map-get($value, shade);
+  $tint: map-get($value, tint);
+
+  --mcbasketball-color-base: var(--mcbasketball-color-#{$color-name}, #{$base}) !important;
+  --mcbasketball-color-base-rgb: var(--mcbasketball-color-#{$color-name}-rgb, #{color-to-rgb-list($base)}) !important;
+  --mcbasketball-color-contrast: var(--mcbasketball-color-#{$color-name}-contrast, #{$contrast}) !important;
+  --mcbasketball-color-contrast-rgb: var(--mcbasketball-color-#{$color-name}-contrast-rgb, #{color-to-rgb-list($contrast)}) !important;
+  --mcbasketball-color-shade: var(--mcbasketball-color-#{$color-name}-shade, #{$shade}) !important;
+  --mcbasketball-color-tint: var(--mcbasketball-color-#{$color-name}-tint, #{$tint}) !important;
+}
+
+@each $color-name, $value in $colors {
+  .mcbasketball-color-#{$color-name} {
+    @include generate-color($color-name);
+  }
+}
+
+[hidden] {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: none !important;
+}
