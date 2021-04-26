@@ -6,16 +6,16 @@ describe('format', () => {
   });
 
   it('formats just first names', () => {
-    expect(format('Cranjis', undefined, undefined)).toEqual('Cranjis');
+    expect(format('Uranus', undefined, undefined)).toEqual('Uranus');
   });
 
   it('formats first and last names', () => {
-    expect(format('Cranjis', undefined, 'Publique')).toEqual('Cranjis Publique');
+    expect(format('Uranus', undefined, 'Publique')).toEqual('Uranus Publique');
   });
 
   it('formats first, middle and last names', () => {
-    expect(format('Cranjis', 'McBasketball', 'Publique')).toEqual(
-      'Cranjis McBasketball Publique'
+    expect(format('Uranus', 'McBasketball', 'Publique')).toEqual(
+      'Uranus McBasketball Publique'
     );
   });
 });

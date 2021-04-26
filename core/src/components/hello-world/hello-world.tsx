@@ -2,11 +2,11 @@ import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.scss',
+  tag: 'hello-world',
+  styleUrl: 'hello-world.scss',
   shadow: true
 })
-export class MyComponent {
+export class HelloWorld {
   /**
    * The first name
    */
@@ -27,6 +27,6 @@ export class MyComponent {
   }
 
   render() {
-    return <div>Hello, Uranus! I'm {this.getText()}</div>;
+    return <div>Hello, World! I'm {this.getText()}</div>;
   }
 }

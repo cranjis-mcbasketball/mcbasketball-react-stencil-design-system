@@ -1,20 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('my-component', () => {
+describe('hello-uranus', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<my-component></my-component>');
-    const element = await page.find('my-component');
+    await page.setContent('<hello-uranus></hello-uranus>');
+    const element = await page.find('hello-uranus');
     expect(element).toHaveClass('hydrated');
   });
 
   it('renders changes to the name data', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<my-component></my-component>');
-    const component = await page.find('my-component');
-    const element = await page.find('my-component >>> div');
+    await page.setContent('<hello-uranus></hello-uranus>');
+    const component = await page.find('hello-uranus');
+    const element = await page.find('hello-uranus >>> div');
     expect(element.textContent).toEqual(`Hello, Uranus! I'm `);
 
     component.setProperty('first', 'Cranjis');

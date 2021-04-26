@@ -1,6 +1,7 @@
 {
   "name": "mcbasketball-core",
   "version": "0.0.1",
+  "author": "Mason U. Borchard",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -29,11 +30,11 @@
   },
   "devDependencies": {
     "@stencil/sass": "^1.4.1",
-    "@types/jest": "24.0.25",
+    "@types/jest": "^26.0.21",
     "@types/puppeteer": "1.19.1",
     "clean-css-cli": "^5.2.2",
     "fs-extra": "^9.1.0",
-    "jest": "24.8.0",
+    "jest": "^26.6.3",
     "jest-cli": "^24.8.0",
     "puppeteer": "1.19.0",
     "sass": "^1.32.11"
