@@ -64,3 +64,10 @@ core/loader/
 core/www/
 .stencil/
 angular/build/
+
+# VSCode workspace
+*.code-workspace
+
+# notes
+notes.txt
+commits.txt
